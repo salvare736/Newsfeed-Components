@@ -19,10 +19,12 @@ In this project we are going to be building a news feed reader. The goal is to h
 * [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
 * [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 * [ ] Push commits: git push origin `<firstName-lastName>`.
+   X
 
 **Follow these steps for completing your project.**
 
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's Repo). **Please don't merge your own pull request**
+   X
 
 ### Launching the project
 
@@ -30,6 +32,7 @@ In this project we are going to be building a news feed reader. The goal is to h
 * [ ] Run `npm install` to download any dependencies listed in the `package.json` file.
 * [ ] Run `npm start` to compile your project and launch a development server.
 * [ ] Navigate Chrome to the URL indicated in the output of the `npm start` command.
+   X
 
 ### Part 1: The Articles Component
 
