@@ -33,7 +33,7 @@ let menuItems = [
 */
 
 function menuMaker(arr){
-  debugger;
+
   const menu = document.createElement('div');
   const menuOptions = document.createElement('ul');
 
