@@ -126,7 +126,7 @@ function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParag
   const articleContent1 = document.createElement('p');
   const articleContent2 = document.createElement('p');
   const articleContent3 = document.createElement('p');
-  const articleButton = document.createElement('span');
+  const articleButton = document.createElement('button');
 
   article.appendChild(articleTitle);
   article.appendChild(articleDate);
