@@ -114,3 +114,66 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+
+// selecting the '.articles' div so that I may add articles to it later down the line
+const articles = document.querySelector('.articles');
+
+function articleMaker({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articleContent1 = document.createElement('p');
+  const articleContent2 = document.createElement('p');
+  const articleContent3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleContent1);
+  article.appendChild(articleContent2);
+  article.appendChild(articleContent3);
+  article.appendChild(articleButton);
+
+  article.classList.add('article');
+  articleDate.classList.add('date');
+  articleButton.classList.add('expandButton');
+
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleContent1.textContent = firstParagraph;
+  articleContent2.textContent = secondParagraph;
+  articleContent3.textContent = thirdParagraph;
+  articleButton.textContent = '+';
+  articleButton.style.fontWeight = 'bold';
+
+  articleButton.addEventListener('click', function(event){
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+}
+
+// using an array method to add the data set containing all the articles to the '.articles' div on the page
+data.forEach(obj => {
+  const article = articleMaker(obj);
+  articles.appendChild(article);
+});
+
+// creating my own article to add to the '.articles' div
+const myArticle = {
+  title: "What does Science have to say about your Flim-flam?",
+  date: "Apr 1st, 2020",
+  firstParagraph: "Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop Dingle bop!",
+  secondParagraph: "Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam Flim-flam!",
+  thirdParagraph: "And that's the waaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaayyyy the news goes... grass tastes bad!"
+}
+
+// creating a function to add custom articles to the '.articles' div
+function articleAppender(obj){
+  const article = articleMaker(obj);
+  articles.appendChild(article);
+}
+
+// invoking the function to add my custom article to the page
+articleAppender(myArticle);
